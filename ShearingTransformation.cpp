@@ -3,47 +3,30 @@
 #include <cmath>
 using namespace std;
 
-struct Point
-{
+struct Point {
     double x, y;
 };
 
-// Draw triangle
-void drawTriangle(Point p[])
-{
-    line(round(p[0].x), round(p[0].y),
-         round(p[1].x), round(p[1].y));
-
-    line(round(p[1].x), round(p[1].y),
-         round(p[2].x), round(p[2].y));
-
-    line(round(p[2].x), round(p[2].y),
-         round(p[0].x), round(p[0].y));
+void drawTriangle(Point p[]) {
+    line(round(p[0].x), round(p[0].y), round(p[1].x), round(p[1].y));
+    line(round(p[1].x), round(p[1].y), round(p[2].x), round(p[2].y));
+    line(round(p[2].x), round(p[2].y), round(p[0].x), round(p[0].y));
 }
 
-// X-axis shearing
-void shearX(Point p[], double shx)
-{
-    for (int i = 0; i < 3; i++)
-    {
+void shearX(Point p[], double shx) {
+    for(int i = 0; i < 3; i++) {
         p[i].x = p[i].x + shx * p[i].y;
     }
 }
 
-// Y-axis shearing
-void shearY(Point p[], double shy)
-{
-    for (int i = 0; i < 3; i++)
-    {
+void shearY(Point p[], double shy) {
+    for(int i = 0; i < 3; i++) {
         p[i].y = p[i].y + shy * p[i].x;
     }
 }
 
-// Combined X-Y shearing
-void shearXY(Point p[], double shx, double shy)
-{
-    for (int i = 0; i < 3; i++)
-    {
+void shearXY(Point p[], double shx, double shy) {
+    for(int i = 0; i < 3; i++) {
         double x = p[i].x;
         double y = p[i].y;
 
@@ -52,17 +35,14 @@ void shearXY(Point p[], double shx, double shy)
     }
 }
 
-int main()
-{
+int main() {
     int gd = DETECT, gm;
 
     Point p[3];
 
-    // Take triangle coordinates
     cout << "Enter coordinates of triangle:\n";
 
-    for (int i = 0; i < 3; i++)
-    {
+    for(int i = 0; i < 3; i++) {
         cout << "Point " << i + 1 << " (x y): ";
         cin >> p[i].x >> p[i].y;
     }
@@ -78,12 +58,9 @@ int main()
     cin >> choice;
 
     initgraph(&gd, &gm, "");
-
-    // Draw original triangle
     drawTriangle(p);
 
-    switch (choice)
-    {
+    switch(choice) {
         case 1:
         {
             double shx;
@@ -126,7 +103,6 @@ int main()
             return 0;
     }
 
-    // Draw transformed triangle
     drawTriangle(p);
 
     getch();

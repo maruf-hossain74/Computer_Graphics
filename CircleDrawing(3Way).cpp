@@ -33,6 +33,7 @@ void trigonometricCircle(int xc, int yc, int r) {
         putpixel(x, y, WHITE);
     }
 }
+
 int main() {
     int gd = DETECT, gm; 
     int xc, yc, r;

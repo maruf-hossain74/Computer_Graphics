@@ -87,6 +87,7 @@ int main() {
     polygon = clipPolygon(polygon, 3);
     setcolor(GREEN);
     drawPolygon(polygon);
+    
     getch();
     closegraph();
     return 0;

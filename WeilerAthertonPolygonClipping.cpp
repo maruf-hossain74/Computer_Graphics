@@ -15,6 +15,7 @@ float ymax = 350;
 bool inside(Point p) {
     return (p.x >= xmin && p.x <= xmax && p.y >= ymin && p.y <= ymax);
 }
+
 bool samePoint(Point a, Point b) {
     return fabs(a.x - b.x) < EPS && fabs(a.y - b.y) < EPS;
 }

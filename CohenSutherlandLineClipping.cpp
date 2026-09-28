@@ -20,7 +20,6 @@ int computeCode(float x, float y) {
     return code;
 }
 
-
 void cohenSutherlandClip(float x1, float y1, float x2, float y2) {
     int code1 = computeCode(x1, y1);
     int code2 = computeCode(x2, y2);

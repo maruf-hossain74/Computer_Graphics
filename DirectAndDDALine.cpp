@@ -4,10 +4,8 @@
 using namespace std;
 
 void directLine(double x1, double y1, double x2, double y2) {
-    if (x1 == x2)
-    {
-        for (int y = round(y1); y <= round(y2); y++)
-        {
+    if(x1 == x2) {
+        for (int y = round(y1); y <= round(y2); y++) {
             putpixel(round(x1), y, WHITE);
         }
         return;
@@ -16,27 +14,22 @@ void directLine(double x1, double y1, double x2, double y2) {
     double m = (y2 - y1) / (x2 - x1);
     double c = y1 - m * x1;
 
-    cout << "\nEquation of line: y = "
-         << m << "x + " << c << endl;
+    cout << "\nEquation of line: y = " << m << "x + " << c << endl;
 
     int start = round(x1);
     int end = round(x2);
 
-    if (start > end)
-    {
+    if(start > end) {
         swap(start, end);
     }
 
-    for (int x = start; x <= end; x++)
-    {
+    for (int x = start; x <= end; x++) {
         int y = round(m * x + c);
         putpixel(x, y, WHITE);
     }
 }
 
-// DDA Algorithm
-void DDA(double x1, double y1, double x2, double y2)
-{
+void DDA(double x1, double y1, double x2, double y2) {
     double dx = x2 - x1;
     double dy = y2 - y1;
 
@@ -48,8 +41,7 @@ void DDA(double x1, double y1, double x2, double y2)
     double x = x1;
     double y = y1;
 
-    for (int i = 0; i <= steps; i++)
-    {
+    for (int i = 0; i <= steps; i++) {
         putpixel(round(x), round(y), WHITE);
 
         x = x + xIncrement;
@@ -57,8 +49,7 @@ void DDA(double x1, double y1, double x2, double y2)
     }
 }
 
-int main()
-{
+int main() {
     int gd = DETECT, gm;
 
     double x1, y1, x2, y2;
@@ -80,8 +71,7 @@ int main()
 
     initgraph(&gd, &gm, "");
 
-    switch (choice)
-    {
+    switch (choice) {
         case 1:
             directLine(x1, y1, x2, y2);
             break;

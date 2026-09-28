@@ -16,7 +16,6 @@ void drawCircle(int xc, int yc, int x, int y) {
 int main() {
     int gd = DETECT, gm;
     int xc, yc, r;
-
     cout << "Enter center (xc, yc): ";
     cin >> xc >> yc;
 

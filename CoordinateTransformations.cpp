@@ -105,7 +105,6 @@ int main() {
             scaling(p, sx, sy);
             break;
         }
-
         case 4:
         {
             int reflectionChoice;

@@ -13,6 +13,7 @@ void drawTriangle(Point p[]) {
     line(round(p[1].x), round(p[1].y), round(p[2].x), round(p[2].y));
     line(round(p[2].x), round(p[2].y), round(p[0].x), round(p[0].y));
 }
+
 void translate(Point p[], int tx, int ty) {
     for (int i = 0; i < 3; i++) {
         p[i].x = p[i].x + tx;

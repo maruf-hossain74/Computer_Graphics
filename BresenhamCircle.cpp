@@ -1,7 +1,6 @@
 #include <graphics.h>
 #include <iostream>
 using namespace std;
-
 void drawCircle(int xc, int yc, int x, int y)
 {
     // 8-way symmetry
