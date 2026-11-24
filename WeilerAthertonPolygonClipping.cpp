@@ -91,7 +91,7 @@ int main() {
     int gd = DETECT, gm;
     initgraph(&gd, &gm, "");
     vector<Point> polygon = {{100, 200}, {300, 80}, {600, 120}, {550, 400}, {300, 450}, {100, 350}};
-    setcolor(WHITE)
+    setcolor(WHITE);
     rectangle((int)xmin, (int)ymin, (int)xmax, (int)ymax);
     setcolor(RED);
     drawPolygon(polygon);
